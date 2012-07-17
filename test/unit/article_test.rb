@@ -25,4 +25,12 @@ class ArticleTest < ActiveSupport::TestCase
     assert_equal "zolwi-tytul-2", @article.permalink
   end
 
+  test "permalink should remember history" do
+    # @article.title = "Żółwi tytuł 2"
+    @article.save
+    @article.title = "Żółwi tytuł 3"
+    @article.save
+    assert_equal @article, Article.find("zolwi-tytul-2")
+  end
+
 end
