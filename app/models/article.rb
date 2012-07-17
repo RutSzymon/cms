@@ -3,4 +3,7 @@ class Article < ActiveRecord::Base
 
   validates :title, presence: true
   validates :body, presence: true
+
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :history], slug_column: :permalink
 end

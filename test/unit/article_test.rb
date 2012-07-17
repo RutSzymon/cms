@@ -1,8 +1,9 @@
+#encoding: utf-8
 require 'test_helper'
 
 class ArticleTest < ActiveSupport::TestCase
   setup do
-    @article = FactoryGirl.build(:article)
+    @article = FactoryGirl.build(:article, title: "Żółwi tytuł 2")
   end
 
   test "it should save valid object" do
@@ -19,9 +20,9 @@ class ArticleTest < ActiveSupport::TestCase
     assert @article.invalid?
   end
 
-  test "it shouldn't save without permalink" do
-    @article.permalink = nil
-    assert @article.invalid?
+  test "permalink should be generated automatically" do
+    @article.save
+    assert_equal "zolwi-tytul-2", @article.permalink
   end
 
 end
