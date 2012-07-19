@@ -1,0 +1,16 @@
+pl:
+  activerecord:
+    models:
+      article:
+        one: "artykuł"
+        other: "artykuły"
+      site:
+        one: "strona"
+        other: "strony"
+    attributes:
+      article:
+        title: "tytuł"
+        body: "treść"
+        permalink: "nazwa linku"
+        created_at: "utworzony"
+        updated_at: "zaktualizowany"
