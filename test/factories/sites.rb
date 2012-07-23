@@ -1,9 +1,0 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
-FactoryGirl.define do
-  factory :site do
-    title "MyString"
-    body "MyText"
-    permalink "MyString"
-  end
-end
