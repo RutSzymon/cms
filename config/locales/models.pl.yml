@@ -2,14 +2,15 @@ pl:
   activerecord:
     models:
       article:
-        one: "artykuł"
-        other: "artykuły"
+        one: "Artykuł"
+        other: "Artykuły"
       site:
-        one: "strona"
-        other: "strony"
+        one: "Strona"
+        other: "Strony"
     attributes:
       article:
         title: "tytuł"
+        summary: "wstęp"
         body: "treść"
         permalink: "nazwa linku"
         created_at: "utworzony"

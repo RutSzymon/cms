@@ -7,7 +7,7 @@ gem 'rails', '3.2.6'
 
 gem 'sqlite3'
 gem "friendly_id"
-gem "activeadmin"
+gem "activeadmin", path:"/home/szymon/Pulpit/projects/active_admin"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

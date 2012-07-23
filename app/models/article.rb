@@ -1,8 +1,8 @@
 class Article < ActiveRecord::Base
-  attr_accessible :body, :permalink, :title
+  attr_accessible :body, :permalink, :summary, :title
 
   validates :title, presence: true
-  validates :body, presence: true
+  validates :summary, presence: true
 
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history], slug_column: :permalink
