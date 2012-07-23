@@ -1,5 +1,5 @@
 class Settings < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :key, :value
 
   def find(key)
     where(key: key).first
