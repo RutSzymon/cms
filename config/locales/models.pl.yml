@@ -4,6 +4,9 @@ pl:
       article:
         one: "Artykuł"
         other: "Artykuły"
+      setting:
+        one: "Ustawienie"
+        other: "Ustawienia"
       site:
         one: "Strona"
         other: "Strony"
@@ -15,3 +18,6 @@ pl:
         permalink: "nazwa linku"
         created_at: "utworzony"
         updated_at: "zaktualizowany"
+      setting:
+        key: "klucz"
+        value: "wartość"

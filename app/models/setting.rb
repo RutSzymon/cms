@@ -1,4 +1,4 @@
-class Settings < ActiveRecord::Base
+class Setting < ActiveRecord::Base
   attr_accessible :key, :value
 
   def find(key)
