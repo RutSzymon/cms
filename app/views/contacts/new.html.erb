@@ -1,0 +1,19 @@
+<%= form_for @contact do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.error_message_on :name %>
+
+    <%= f.label :email %>
+    <%= f.email_field :email, required: :required %>
+    <%= f.error_message_on :email %>
+
+    <%= f.label :topic %>
+    <%= f.text_field :topic %>
+    <%= f.error_message_on :topic %>
+
+    <%= f.label :body %>
+    <%= f.text_area :body, required: :required %>
+    <%= f.error_message_on :body %>
+
+    <%= f.submit %>
+<% end %>
