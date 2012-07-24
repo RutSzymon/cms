@@ -15,9 +15,14 @@ class ArticleTest < ActiveSupport::TestCase
     assert @article.invalid?
   end
 
-  test "it shouldn't save without body" do
-    @article.body = nil
+  test "it shouldn't save article without summary" do
+    @article.summary       = nil
     assert @article.invalid?
+  end
+
+  test "it should save without body" do
+    @article.body = nil
+    assert @article.save
   end
 
   test "permalink should be generated automatically" do
@@ -32,5 +37,4 @@ class ArticleTest < ActiveSupport::TestCase
     @article.save
     assert_equal @article, Article.find("zolwi-tytul-2")
   end
-
 end
