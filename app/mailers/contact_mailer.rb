@@ -1,8 +1,8 @@
 class ContactMailer < ActionMailer::Base
   default from: "from@example.com"
 
-  def mail(contact)
+  def contact(contact)
     @contact = contact
-    mail(:to => Setting.find("email_receiver"), :subject => "Kontakt")
+    mail(:to => Setting.get("email_receiver"), :subject => "Kontakt")
   end
 end

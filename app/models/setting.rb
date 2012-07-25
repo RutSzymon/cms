@@ -3,7 +3,7 @@ class Setting < ActiveRecord::Base
 
   validates :key, presence: true, uniqueness: true
 
-  def find(key)
-    where(key: key).first
+  def self.get(key)
+    where(key: key).first.try(:value)
   end
 end

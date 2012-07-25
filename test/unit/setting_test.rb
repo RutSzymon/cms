@@ -24,4 +24,17 @@ class SettingsTest < ActiveSupport::TestCase
     @setting.value = nil
     assert @setting.save
   end
+
+  test "it should find the correct value" do
+    @setting.save
+    @setting = Setting.get("klucz")
+    assert_equal "wartosc", @setting
+  end
+
+  test "if there isn't suitable key it should be nil" do
+    @setting.save
+    @setting = Setting.get("test")
+    assert_equal nil, @setting
+  end
+
 end
