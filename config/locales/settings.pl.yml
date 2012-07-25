@@ -1,3 +1,4 @@
 pl:
   setting:
     page_title: "Tytuł strony"
+    email_receiver: "E-mail do formularza kontaktowego"

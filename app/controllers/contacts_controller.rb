@@ -15,4 +15,6 @@ class ContactsController < ApplicationController
     end
   end
 
+  ContactMailer.mail(@contact).deliver
+
 end

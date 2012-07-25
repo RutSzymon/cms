@@ -3,6 +3,6 @@ class ContactMailer < ActionMailer::Base
 
   def mail(contact)
     @contact = contact
-    mail(:to => "#{user.name} <#{user.email}>", :subject => "Registered")
+    mail(:to => Setting.find("email_receiver"), :subject => "Kontakt")
   end
 end
