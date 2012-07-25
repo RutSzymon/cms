@@ -3,8 +3,8 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   </head>
   <body>
-    <h4><p>Dostałeś wiadomość kontaktową z Twojej strony.</p></h1>
-    <p><%= @contact.name %> napisał:</p>
+    <h3><p>Dostałeś wiadomość kontaktową z Twojej strony.</p></h3>
+    <p><%= "#{@contact.name} <#{@contact.email}>" %> napisał:</p>
     <%= simple_format @contact.body %>
   </body>
 </html>

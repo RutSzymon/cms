@@ -1,4 +1,5 @@
 Dostałeś wiadomość kontaktową z Twojej strony.
+------------------------------------------------------------------
+<%= "#{@contact.name} <#{@contact.email}>".html_safe %> napisał:
 
-<%= @contact.name %> napisał:
 <%= @contact.body %>
