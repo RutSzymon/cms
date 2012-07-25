@@ -2,6 +2,9 @@ class ContactMailer < ActionMailer::Base
 
   def contact(contact)
     @contact = contact
-    mail(:to => Setting.get("email_receiver"), from: contact.email, subject: contact.topic)
+    topic = contact.topic unless contact.topic.empty?
+    topic ||= Setting.get("default_contact_email_topic")
+
+    mail(:to => Setting.get("email_receiver"), from: contact.email, subject: topic)
   end
 end

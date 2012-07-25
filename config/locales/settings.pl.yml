@@ -2,3 +2,4 @@ pl:
   setting:
     page_title: "Tytuł strony"
     email_receiver: "E-mail do formularza kontaktowego"
+    default_contact_email_topic: "Domyślny temat wiadomości kontaktowej"
