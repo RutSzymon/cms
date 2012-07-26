@@ -26,10 +26,10 @@ class Setting < ActiveRecord::Base
 
   private
   def phone_validation
-    errors.add(:value, "To nie jest tel.") unless value.match(/(\+?)(\d+)/)
+    errors.add(:value, I18n.t("setting.this_isnt_phone_number")) unless value.match(/^(\+?)(\d|\s|\-)+$/)
   end
 
   def email_validation
-    errors.add(:value, "asddsadas") unless value.match(/^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}$/i)
+    errors.add(:value, I18n.t("setting.this_isnt_email")) unless value.match(/^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}$/i)
   end
 end

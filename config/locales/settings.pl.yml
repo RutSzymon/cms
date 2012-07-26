@@ -7,3 +7,5 @@ pl:
     company_name: "Nazwa firmy"
     company_address: "Adres firmy"
     company_phone_number: "Numer telefonu"
+    this_isnt_phone_number: "To nie jest numer telefonu"
+    this_isnt_email: "To nie jest adres email"
