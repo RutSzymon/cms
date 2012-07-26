@@ -1,4 +1,9 @@
-<%= form_for @contact do |f| %>
+<div class="contact">
+    <%= Setting.get("contact_info") %>
+</div>
+
+<div class="contact">
+  <%= form_for @contact do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
     <%= f.error_message_on :name %>
@@ -16,4 +21,5 @@
     <%= f.error_message_on :body %>
 
     <%= f.submit %>
-<% end %>
+  <% end %>
+</div>
