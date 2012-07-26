@@ -2,7 +2,19 @@ class Setting < ActiveRecord::Base
   attr_accessible :value
 
   validates :key, presence: true, uniqueness: true
+  validates :content_type, presence: true, inclusion: ["email", "phone", "string", "text"]
   validates :value, presence: true, if: :required?
+
+  before_save :check_value
+
+  def check_value
+    case content_type
+    when "phone"
+      phone_validation
+    when "email"
+      email_validation
+    end
+  end
 
   def required?
     required == true
@@ -10,5 +22,14 @@ class Setting < ActiveRecord::Base
 
   def self.get(key)
     where(key: key).first.try(:value)
+  end
+
+  private
+  def phone_validation
+    errors.add(:value, "To nie jest tel.") unless value.match(/(\+?)(\d+)/)
+  end
+
+  def email_validation
+    errors.add(:value, "asddsadas") unless value.match(/^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}$/i)
   end
 end
