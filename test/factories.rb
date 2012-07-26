@@ -20,5 +20,7 @@ FactoryGirl.define do
   factory :setting do
     key "klucz"
     value "wartosc"
+    content_type "string"
+    required true
   end
 end

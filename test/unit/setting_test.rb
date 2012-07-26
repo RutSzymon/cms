@@ -20,9 +20,42 @@ class SettingsTest < ActiveSupport::TestCase
     assert @setting2.invalid?
   end
 
-  test "it should save without value" do
+  test "it shouldn't save without content_type" do
+    @setting.content_type = nil
+    assert @setting.invalid?
+  end
+
+  test "it shouldn't save with incorrect content_type" do
+    @setting.content_type = "typ"
+    assert @setting.invalid?
+  end
+
+  test "it shouldn't save without required" do
+    @setting.required = nil
+    assert @setting.invalid?
+  end
+
+  test "it shouldn't save without value if required = true" do
+    @setting.value = nil
+    assert @setting.invalid?
+  end
+
+  test "it should save without value if required = false" do
+    @setting.required = false
     @setting.value = nil
     assert @setting.save
+  end
+
+  test "it shouldn't save with incorrect phone number value" do
+    @setting.content_type = "phone"
+    @setting.value = "123 456 xxx"
+    assert @setting.invalid?
+  end
+
+  test "it shouldn't save with incorrect email value" do
+    @setting.content_type = "email"
+    @setting.value = "example.example.com"
+    assert @setting.invalid?
   end
 
   test "it should find the correct value" do

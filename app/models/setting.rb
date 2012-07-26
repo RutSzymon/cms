@@ -3,9 +3,10 @@ class Setting < ActiveRecord::Base
 
   validates :key, presence: true, uniqueness: true
   validates :content_type, presence: true, inclusion: ["email", "phone", "string", "text"]
+  validates :required, inclusion: [true, false]
   validates :value, presence: true, if: :required?
 
-  before_save :check_value
+  validate :check_value
 
   def check_value
     case content_type
