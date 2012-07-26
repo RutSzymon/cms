@@ -1,0 +1,8 @@
+<%= semantic_form_for [:admin, @setting] do |f| %>
+
+  <%= f.inputs t "setting.#{setting.key}" do %>
+    <%= f.input :value, as: @setting.content_type %>
+  <% end %>
+
+  <%= f.buttons :commit %>
+<% end %>
