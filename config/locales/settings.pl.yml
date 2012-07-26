@@ -4,4 +4,6 @@ pl:
     email_receiver: "E-mail do formularza kontaktowego"
     default_contact_email_topic: "Domyślny temat wiadomości kontaktowej"
     email_sender: "Adres nadawczy"
-    contact_info: "Dane kontaktowe"
+    company_name: "Nazwa firmy"
+    company_address: "Adres firmy"
+    company_phone_number: "Numer telefonu"
