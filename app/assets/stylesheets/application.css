@@ -15,3 +15,8 @@
   width: 50%;
   float: left;
 }
+
+.company_name{
+  font-size: large;
+  text-shadow: 3px 3px 5px grey;
+}

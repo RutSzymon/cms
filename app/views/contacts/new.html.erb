@@ -1,5 +1,10 @@
 <div class="contact">
-    <%= Setting.get("contact_info").html_safe %>
+    <address>
+        <div class="company_name"><p><%= Setting.get("company_name") %></p></div>
+        <p><%= simple_format Setting.get("company_address").html_safe %></p>
+        <p><%= Setting.get("email_receiver") %></p>
+        <p><%= Setting.get("company_phone_number") %></p>
+    </address>
 </div>
 
 <div class="contact">
