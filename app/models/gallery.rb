@@ -1,3 +1,5 @@
 class Gallery < ActiveRecord::Base
-  attr_accessible :description, :permalink, :photo_id, :title
+  has_many :photos
+
+  attr_accessible :description, :permalink, :title
 end
