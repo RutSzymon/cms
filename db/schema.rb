@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120726073512) do
+ActiveRecord::Schema.define(:version => 20120727074753) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -65,6 +65,15 @@ ActiveRecord::Schema.define(:version => 20120726073512) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], :name => "index_friendly_id_slugs_on_slug_and_sluggable_type", :unique => true
   add_index "friendly_id_slugs", ["sluggable_id"], :name => "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
+
+  create_table "galleries", :force => true do |t|
+    t.string   "title",       :default => "", :null => false
+    t.text     "description"
+    t.string   "permalink",   :default => "", :null => false
+    t.integer  "photo_id"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
 
   create_table "settings", :force => true do |t|
     t.string   "key"
