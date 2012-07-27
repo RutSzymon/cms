@@ -10,6 +10,12 @@ pl:
       site:
         one: "Strona"
         other: "Strony"
+      gallery:
+        one: "Galeria"
+        other: "Galerie"
+      photo:
+        one: "Zdjęcie"
+        other: "Zdjęcia"
     attributes:
       article:
         title: "tytuł"
@@ -21,3 +27,11 @@ pl:
       setting:
         key: "klucz"
         value: "wartość"
+      gallery:
+        title: "tytuł"
+        description: "opis"
+        permalink: "nazwa linku"
+      photo:
+        title: "tytuł"
+        description: "opis"
+        photo: "zdjęcie"
