@@ -2,5 +2,6 @@
   <article>
     <p><%= photo.title %></p>
     <p><%= photo.description %></p>
+    <%= image_tag photo.photo.url(:thumb) %>
   </article>
 <% end %>
