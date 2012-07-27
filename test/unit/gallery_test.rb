@@ -20,9 +20,16 @@ class GalleryTest < ActiveSupport::TestCase
     assert @gallery.save
   end
 
-  test "it shouldn't save without permalink" do
-    @gallery.permalink = nil
-    assert @gallery.invalid?
+  test "permalink should be generated automatically" do
+    @gallery.save
+    assert_equal "tytul-galerii", @gallery.permalink
+  end
+
+  test "permalink should remember history" do
+    @gallery.save
+    @gallery.title = "tytul galerii 2"
+    @gallery.save
+    assert_equal @gallery, Gallery.find("tytul-galerii-2")
   end
 
   test "it should have many photos" do

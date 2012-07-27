@@ -27,7 +27,6 @@ FactoryGirl.define do
   factory :gallery do
     title "tytul galerii"
     description "opis galerii"
-    photo
   end
 
   factory :photo do
