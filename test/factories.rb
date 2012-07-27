@@ -32,5 +32,6 @@ FactoryGirl.define do
   factory :photo do
     title "tytul zdjecia"
     description "opis galerii"
+    photo { File.open(Rails.root.join("app", "assets", "images", "rails.png")) }
   end
 end

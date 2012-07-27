@@ -19,9 +19,16 @@ class PhotoTest < ActiveSupport::TestCase
     assert @photo.save
   end
 
+  test "it shouldn't save without photo" do
+    temp_file = Tempfile.new("temporary")
+    @photo.photo = temp_file
+    assert @photo.invalid?
+  end
+
   test "it should belong to gallery" do
     gallery = FactoryGirl.create(:gallery)
     @photo.gallery = gallery
     assert_equal gallery, @photo.gallery
   end
+
 end
