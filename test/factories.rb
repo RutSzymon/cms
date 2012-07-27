@@ -23,4 +23,15 @@ FactoryGirl.define do
     content_type "string"
     required true
   end
+
+  factory :gallery do
+    title "tytul galerii"
+    description "opis galerii"
+    photo
+  end
+
+  factory :photo do
+    title "tytul zdjecia"
+    description "opis galerii"
+  end
 end
