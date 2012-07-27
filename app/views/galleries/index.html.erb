@@ -1,4 +1,6 @@
 <% @galleries.each do |gallery| %>
-  <p><%= @gallery.title %></p>
-  <p><%= @gallery.description %></p>
+  <article>
+    <p><%= link_to gallery.title, gallery_path(gallery) %></p>
+    <p><%= gallery.description %></p>
+  </article>
 <% end %>
