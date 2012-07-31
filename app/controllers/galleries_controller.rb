@@ -6,6 +6,7 @@ class GalleriesController < ApplicationController
 
   def show
     @gallery = Gallery.find(params[:id])
+    @photos = @gallery.photos.page(params[:page])
   end
 
 end

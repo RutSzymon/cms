@@ -15,6 +15,11 @@ article{
   margin-bottom: 30px;
 }
 
+.photo{
+  margin-right: 20px;
+  float: left;
+}
+
 .contact{
   width: 50%;
   float: left;

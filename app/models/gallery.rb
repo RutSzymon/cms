@@ -8,4 +8,6 @@ class Gallery < ActiveRecord::Base
   attr_accessible :description, :permalink, :title
 
   validates :title, presence: true
+
+  paginates_per 20
 end
