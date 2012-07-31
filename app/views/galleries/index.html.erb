@@ -1,5 +1,6 @@
 <% @galleries.each do |gallery| %>
   <article>
+    <p><%= image_tag gallery.main_photo.url(:thumb) %></p>
     <p><%= link_to gallery.title, gallery_path(gallery) %></p>
     <p><%= gallery.description %></p>
   </article>

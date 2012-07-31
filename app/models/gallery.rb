@@ -10,4 +10,8 @@ class Gallery < ActiveRecord::Base
   validates :title, presence: true
 
   paginates_per 20
+
+  def main_photo
+    self[:main_photo] || photos.random.first
+  end
 end
