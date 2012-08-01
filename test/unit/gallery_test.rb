@@ -36,4 +36,22 @@ class GalleryTest < ActiveSupport::TestCase
     @photo = FactoryGirl.create(:photo, gallery: @gallery)
     assert_equal [@photo], @gallery.photos
   end
+
+  test "if photo_id isn't nil, it should show this photo" do
+    @photo = FactoryGirl.create(:photo, gallery: @gallery)
+    @photo2 = FactoryGirl.create(:photo, gallery: @gallery)
+    @gallery.photo_id = 1
+    assert_equal @gallery.main_photo, @photo
+  end
+
+  test "if photo_id is nil, it should show randomly photo" do
+    @photo = FactoryGirl.create(:photo, gallery: @gallery)
+    @photo2 = FactoryGirl.create(:photo, gallery: @gallery)
+    @table = []
+    @gallery.photo_id = nil
+    10.times do
+      @table << @gallery.main_photo
+    end
+    assert @table.uniq.size != 1
+  end
 end

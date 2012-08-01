@@ -9,5 +9,6 @@ class Photo < ActiveRecord::Base
   validates :photo, presence: true, integrity: true
 
   delegate :url, to: :photo
+
   scope :random, order("random();")
 end
